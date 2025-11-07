@@ -50,7 +50,7 @@
         e.preventDefault();
 
         if (!(item.value)) {
-          alert();
+          alert("no input");
           return;
         }
         let toBeAdded = item.value;
@@ -68,7 +68,13 @@
         
         mySpan.textContent = toBeAdded;
         myButton.textContent = "Delete";
+        myButton.addEventListener("click", (e) => {
+          e.target.parentElement.remove();
+          item.focus();
+        })
       })
+      
+
     </script>
   </body>
 </html>
