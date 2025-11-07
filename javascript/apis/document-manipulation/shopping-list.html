@@ -31,7 +31,44 @@
     </ul>
 
     <script>
+      const list = document.querySelector("ul");
+      const item = document.querySelector("input");
+      const btn = document.querySelector("button");
 
+      // dun use here, coz i dun want to add classes to the elements
+      // document.addEventListener("click", (e) => {
+      //   switch (e.target.tagName) {
+      //     case "BUTTON":
+      //       e.preventDefault();
+      //       break;
+      //     default:
+
+      //   }
+      // })
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (!(item.value)) {
+          alert();
+          return;
+        }
+        let toBeAdded = item.value;
+        item.value = "";
+
+        // alert(toBeAdded);
+
+        let myLi = document.createElement("li");
+        let mySpan = document.createElement("span");
+        let myButton = document.createElement("button");
+
+        list.appendChild(myLi);
+        myLi.appendChild(mySpan);
+        myLi.appendChild(myButton);
+        
+        mySpan.textContent = toBeAdded;
+        myButton.textContent = "Delete";
+      })
     </script>
   </body>
 </html>
